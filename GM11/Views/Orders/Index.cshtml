@@ -1,0 +1,89 @@
+@model IEnumerable<GM011.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOut)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateIN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MileageOut)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MileageIn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MileageAllowance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExcessMileage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Discription)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MileageOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MileageIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MileageAllowance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExcessMileage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.CarID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrderID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrderID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
