@@ -83,9 +83,6 @@ namespace GM11.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CarID,RegNo,CarTypeID,ServiceID,Year,CurrentMilage,NextServiceMilage,Doors,Seats,Fuel,FuelPerKM,Transmission")] Car car)
         {
-
-
-
             if (ModelState.IsValid)
             {
                 _context.Add(car);

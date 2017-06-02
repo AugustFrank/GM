@@ -5,7 +5,7 @@
 
 @*Her Kommer Der Landing Page med Formular for valg af dato*@
 @* Landing skal fylle 100%*@
-<header >
+<header>
     <div class="container">
         <div class="slider-container">
             <div class="intro-text">
@@ -31,134 +31,117 @@
         </div>
         <div class="row">
 
-        @foreach (var item in Model)
-        {
+            @foreach (var item in Model)
+            {
 
-            <div class="col-lg-4">
-                <h2> Stuff</h2>
-                <img src="~/images/dummyCar1.jpg" />
-                <div class="caption">
-                    <p class="productTitle">@Html.DisplayNameFor(Model => item.FuelPerKM)</p>
-                    <p class="productDescription"> Example of this range: Car</p>
-                    <ul class="list-inline productMeta">
-                        <li>
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <div class="col-lg-4">
+                    <h2> Stuff</h2>
+                    <img src="~/images/dummyCar1.jpg" />
+                    <div class="caption">
+                        <p class="productTitle">@Html.DisplayFor(Model => item.FuelPerKM)</p>
+                        <p class="productDescription"> Example of this range: Car</p> <!-- Needs to be implemented in DB! -->
+                        <ul class="list-inline productMeta">
+                            <li>
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 
-                            <span class="text-uppercase">@Html.DisplayFor(Model => item.Seats)</span>
-                        </li>
+                                <span class="text-uppercase">@Html.DisplayFor(Model => item.Seats)</span>
+                            </li>
 
-                        <li>
-                            <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                            <li>
+                                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
 
-                            <span class="text-uppercase">@Html.DisplayFor(Model => item.Seats)</span> <!-- Baggage Needs DB Fix! -->
-                        </li>
+                                <span class="text-uppercase">@Html.DisplayFor(Model => item.Seats)</span> <!-- Baggage Needs DB Fix! -->
+                            </li>
 
-                        <li>
-                            <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+                            <li>
+                                <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
 
-                            <span class="text-uppercase">@Html.DisplayFor(Model => item.Year)</span>
-                        </li>
+                                <span class="text-uppercase">@Html.DisplayFor(Model => item.Year)</span>
+                            </li>
 
-                        <li>
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                            <li>
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
 
-                            <span class="text-uppercase">
-                                @Html.DisplayFor(Model => item.Transmission)
-                            <span> <!-- Gears Needs DB Fix! (A - M) Instead of (Sentences) -->
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        }
-
-
-            <!--<div class="col-lg-4">
-                <h2> Stuff</h2>
-                <img src="~/images/dummyCar1.jpg" />
-                <div class="caption">
-                    <p class="productTitle"> Medium: Low Emission</p>
-                    <p class="productDescription"> Example of this range: Car</p>
-                    <ul class="list-inline productMeta">
-                        <li>
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">4</span>
-                        </li>
-
-                        <li>
-                            <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">2</span>
-                        </li>
-
-                        <li>
-                            <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">4</span>
-                        </li>
-
-                        <li>
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">M</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <h2> Stuff</h2>
-                <img src="~/images/dummyCar1.jpg" />
-                <div class="caption">
-                    <p class="productTitle"> Medium: Low Emission</p>
-                    <p class="productDescription"> Example of this range: Car</p>
-                    <ul class="list-inline productMeta">
-                        <li>
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">4</span>
-                        </li>
-
-                        <li>
-                            <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">2</span>
-                        </li>
-
-                        <li>
-                            <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">4</span>
-                        </li>
-
-                        <li>
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">M</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>-->
-
-    </div>
-    <div class="sectionOffers">
-        <div class="sectionBody">
-            <ul class="radio-inline services">
-                <li class="serviceExcerpt">
-                    <div class="serviceExcerptHead">
-                        <div class="serviceExcerptImage">
-                            <i class="fa fa-car"></i>
-                        </div>
-                        <div class="serviceExcerptTitle"></div>
+                                <span class="text-uppercase">
+                                    @Html.DisplayFor(Model => item.Transmission)
+                                </span> <!-- Gears Needs DB Fix! (A - M) Instead of (Sentences) -->
+                            </li>
+                        </ul>
                     </div>
-                    <div class="serviceExcerptBody"></div>
-                </li>
-            </ul>
+                </div>
+
+            }
         </div>
     </div>
+
+
+    <section class="sectionOffers">
+
+        <div class="sectionBody">
+            <section class="sectionSubSection sectionSubServices">
+                <div class="shell">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="serviceExcerptHead">
+                                <div class="serviceExcerptImage">
+                                    <i class="fa fa-car"></i>
+                                </div>
+                                <div class="serviceExcerptTitle"><span class="" data-pk="ws_vehicles_to_meet_2" data-type="text">Vehicles To Meet Demands</span></div>
+                            </div>
+
+                            <div class="serviceExcerptBody">
+                                <div class="serviceExcerptParagraph"><span class="wc-editable" data-type="textarea">Replace the dummy content here with your own. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="serviceExcerptHead">
+                                <div class="serviceExcerptImage">
+                                    <i class="fa fa-credit-card"></i>
+                                </div>
+
+                                <div class="serviceExcerptTitle"><span class="" data-type="text">Great Daily and Hourly Rates</span></div>
+
+                            </div>
+
+                            <div class="serviceExcerptBody">
+                                <div class="serviceExcerptParagraph"><span class="wc-editable" data-type="textarea">Replace the dummy content here with your own. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="serviceExcerptHead">
+                                <div class="serviceExcerptImage">
+                                    <i class="fa fa-calendar-check-o"></i>
+                                </div>
+
+                                <div class="serviceExcerptTitle"><span class="" data-type="text">No Hidden Charges</span></div>
+
+                            </div>
+
+                            <div class="serviceExcerptBody">
+                                <div class="serviceExcerptParagraph"><span class="wc-editable" data-type="textarea">Replace the dummy content here with your own. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="serviceExcerptHead">
+                                <div class="serviceExcerptImage">
+                                    <i class="fa fa-plus-circle"></i>
+                                </div>
+
+                                <div class="serviceExcerptTitle"><span class="" data-pk="ws_vehicles_to_meet_2" data-type="text">Great Daily and Hourly Rates</span></div>
+
+                            </div>
+
+                            <div class="serviceExcerptBody">
+                                <div class="serviceExcerptParagraph"><span class="wc-editable" data-pk="ws_delivery_service_desc_2" data-type="textarea">Replace the dummy content here with your own. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
 </section>
-        
+
 
 
 @*Her Kommer Der Booking/Contact Formula*@
