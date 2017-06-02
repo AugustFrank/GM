@@ -16,3 +16,12 @@
     border: 0;
     text-align: center;
 }
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.HeaderPic {
+    background-image: url(../images/island.jpg);
+}
