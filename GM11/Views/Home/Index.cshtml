@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<GM011.Models.Car>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -29,7 +30,50 @@
             </div>
         </div>
         <div class="row">
+
+        @foreach (var item in Model)
+        {
+
             <div class="col-lg-4">
+                <h2> Stuff</h2>
+                <img src="~/images/dummyCar1.jpg" />
+                <div class="caption">
+                    <p class="productTitle">@Html.DisplayNameFor(Model => item.FuelPerKM)</p>
+                    <p class="productDescription"> Example of this range: Car</p>
+                    <ul class="list-inline productMeta">
+                        <li>
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+
+                            <span class="text-uppercase">@Html.DisplayFor(Model => item.Seats)</span>
+                        </li>
+
+                        <li>
+                            <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+
+                            <span class="text-uppercase">@Html.DisplayFor(Model => item.Seats)</span> <!-- Baggage Needs DB Fix! -->
+                        </li>
+
+                        <li>
+                            <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+
+                            <span class="text-uppercase">@Html.DisplayFor(Model => item.Year)</span>
+                        </li>
+
+                        <li>
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+
+                            <span class="text-uppercase">
+                                @Html.DisplayFor(Model => item.Transmission)
+                            <span> <!-- Gears Needs DB Fix! (A - M) Instead of (Sentences) -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        }
+
+
+            <!--<div class="col-lg-4">
                 <h2> Stuff</h2>
                 <img src="~/images/dummyCar1.jpg" />
                 <div class="caption">
@@ -95,40 +139,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <h2> Stuff</h2>
-                <img src="~/images/dummyCar1.jpg" />
-                <div class="caption">
-                    <p class="productTitle"> Medium: Low Emission</p>
-                    <p class="productDescription"> Example of this range: Car</p>
-                    <ul class="list-inline productMeta">
-                        <li>
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">4</span>
-                        </li>
-
-                        <li>
-                            <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">2</span>
-                        </li>
-
-                        <li>
-                            <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">4</span>
-                        </li>
-
-                        <li>
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-
-                            <span class="text-uppercase">M</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        </div>-->
 
     </div>
     <div class="sectionOffers">
