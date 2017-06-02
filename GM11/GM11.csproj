@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\css\August.css" />
     <Content Include="wwwroot\js\navfade.js" />
   </ItemGroup>
   <ItemGroup>

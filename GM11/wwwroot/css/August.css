@@ -1,0 +1,18 @@
+﻿body {
+}
+.sectionProducts .sectionTitle {
+    color: #454141;
+}
+.sectionProducts .sectionTitle {
+    margin: 0;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.sectionProducts .page-header {
+    margin: 0;
+    padding: 30px 0 20px;
+    border: 0;
+    text-align: center;
+}
