@@ -6,33 +6,39 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GM011.Models;
 using GM11.Models;
-
+using GM11.Models.GMViewModels;
 namespace GM11.Controllers
 {
     public class HomeController : Controller
     {
 
         private readonly GMContext _context;
-        private List<Car> List = new List<Car>();
+        private List<Car> viewModel = new List<Car>();
 
         public HomeController(GMContext context)
         {
             this._context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int? id)
         {
+            var viewModel = new CarIndexData();
+            viewModel.Cars = await _context.Car
+                .Include(i => i.CarType)
+                .AsNoTracking()
+                .OrderBy(i => i.CarType.UnitPrice)
+                .ToListAsync();
 
            
 
             foreach(Car item in _context.Car.ToList())
             {
-                List.Add(item);
+                
             }
 
             //List.Add()
 
-            return View(List);
+            return View(viewModel);
         }
 
         public IActionResult About()

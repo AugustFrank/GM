@@ -1,4 +1,7 @@
-﻿@model IEnumerable<GM011.Models.Car>
+﻿@*@model IEnumerable<GM011.Models.Car>*@
+
+ @model GM11.Models.GMViewModels.CarIndexData
+
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -31,14 +34,14 @@
         </div>
         <div class="row">
 
-            @foreach (var item in Model)
+            @foreach (var item in Model.Cars)
             {
               <div class="col-lg-4">
                     <h2> Stuff</h2>
                     <img src="~/images/dummyCar1.jpg" />
                     <div class="caption">
-                        <p class="productTitle">@Html.DisplayFor(Model => item.FuelPerKM)</p>
-                        <p class="productDescription"> Example of this range: Car</p> <!-- Needs to be implemented in DB! -->
+                        <p class="productTitle">@Html.DisplayFor(Model => item.FuelPerKM) Liters Per 100 Km</p>
+                        <p class="productDescription"> Example of this range: @Html.DisplayFor(ModelItem => item.CarType.Make)  @Html.DisplayFor(Model=>item.CarType.Model) </p> <!-- Needs to be implemented in DB! -->
                         <ul class="list-inline productMeta">
                             <li>
                                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
