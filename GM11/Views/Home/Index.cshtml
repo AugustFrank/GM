@@ -1,6 +1,6 @@
 ﻿@*@model IEnumerable<GM011.Models.Car>*@
 
- @model GM11.Models.GMViewModels.CarIndexData
+@model GM11.Models.GMViewModels.CarIndexData
 
 @{
     ViewData["Title"] = "Home Page";
@@ -14,8 +14,46 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome to Green Mile</div>
                 <div class="intro-heading">We are not ready yet!</div>
-
             </div>
+            @*start of from*@
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label> Pick Up Date</label>
+                            <input class="form-control" type="datetime-local" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label> Return Date</label>
+                            <input class="form-control" type="datetime-local" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label> Pick Up location </label>
+                            <select class="form-control" type="datetime-local">
+                                <option>Reykjavik</option>
+                                <option>Keflavik</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label> Pick Up return location</label>
+                            <select class="form-control" type="datetime-local">
+                                <option>Reykjavik</option>
+                                <option>Keflavik</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+            </div>
+
         </div>
     </div>
 </header>
@@ -36,12 +74,12 @@
 
             @foreach (var item in Model.Cars)
             {
-              <div class="col-lg-4">
+                <div class="col-lg-4">
                     <h2> Stuff</h2>
                     <img src="~/images/dummyCar1.jpg" />
                     <div class="caption">
                         <p class="productTitle">@Html.DisplayFor(Model => item.FuelPerKM) Liters Per 100 Km</p>
-                        <p class="productDescription"> Example of this range: @Html.DisplayFor(ModelItem => item.CarType.Make)  @Html.DisplayFor(Model=>item.CarType.Model) </p> <!-- Needs to be implemented in DB! -->
+                        <p class="productDescription"> Example of this range: @Html.DisplayFor(ModelItem => item.CarType.Make)  @Html.DisplayFor(Model => item.CarType.Model) </p> <!-- Needs to be implemented in DB! -->
                         <ul class="list-inline productMeta">
                             <li>
                                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
