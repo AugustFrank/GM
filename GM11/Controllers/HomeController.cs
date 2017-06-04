@@ -13,7 +13,7 @@ namespace GM11.Controllers
     {
 
         private readonly GMContext _context;
-        private static List<Car> List = new List<Car>();
+        private List<Car> List = new List<Car>();
 
         public HomeController(GMContext context)
         {

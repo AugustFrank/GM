@@ -1,5 +1,12 @@
 ﻿body {
 }
+
+/********NAVIGATION STYLES********/
+
+.navbar-brand > img {
+    margin-top:-15px;
+}
+
 .sectionProducts .sectionTitle {
     color: #454141;
 }
@@ -22,8 +29,16 @@
     margin-right: auto;
     margin-left: auto;
 }
+
+.body-content {
+    padding-right: 0px;
+    padding-left: 0px; 
+}
+
+
 .HeaderPic {
-    background-image: url(../images/island.jpg);
+    background-image: url(../images/isroad.jpg);
+    background-position: center;
 }
 
 /*Here Starts the Excerpt */
@@ -43,14 +58,16 @@
     float: left;
     width: 60px;
     height: 60px;
+    margin-top:30px;
     border: 1px solid #e8bd11;
     font-size: 0;
     text-align: center;
     border-radius: 6px;
+    position:relative;
 }
 .serviceExcerptHead .serviceExcerptTitle {
     margin: 0;
-    padding: 0 10px 0 15px;
+    padding: 30px 10px 0 15px;
     font-size: 17px;
     line-height: 1.65;
     font-weight: 700;
@@ -66,18 +83,22 @@
     text-align: left;
 }
 
+.serviceExcerptParagraph {
+    margin-top: 30px;
+}
+
 .shell {
     width: 1230px;
     margin: 0 auto;
 }
 /* icons*/
 .fa-car {
-    width: 48px;
-    height: 26px;
-    background-position: -3px -2px;
+    
 }
 .fa {
-    display: inline-block;
-    
-    vertical-align: middle;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
