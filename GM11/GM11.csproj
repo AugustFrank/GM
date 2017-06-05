@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Content Include="wwwroot\css\August.css" />
+    <Content Include="wwwroot\images\xl7.jpg" />
     <Content Include="wwwroot\js\navfade.js" />
   </ItemGroup>
   <ItemGroup>

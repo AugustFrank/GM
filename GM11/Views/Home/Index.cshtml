@@ -75,8 +75,8 @@
             @foreach (var item in Model.Cars)
             {
                 <div class="col-lg-4">
-                    <h2> Stuff</h2>
-                    <img src="~/images/dummyCar1.jpg" />
+                    
+                    <img src="~/images/@Html.DisplayFor(Model=>item.CarType.ImagePath)" width="100%"/>
                     <div class="caption">
                         <p class="productTitle">@Html.DisplayFor(Model => item.FuelPerKM) Liters Per 100 Km</p>
                         <p class="productDescription"> Example of this range: @Html.DisplayFor(ModelItem => item.CarType.Make)  @Html.DisplayFor(Model => item.CarType.Model) </p> <!-- Needs to be implemented in DB! -->

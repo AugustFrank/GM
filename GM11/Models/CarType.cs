@@ -19,6 +19,8 @@ namespace GM011.Models
         [DataType(DataType.Currency)]
         public decimal UnitPrice { get; set; }
 
+        public string ImagePath { get; set; }
+
         public  ICollection<Car> Cars { get; set; }
     }
 }
