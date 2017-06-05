@@ -19,11 +19,16 @@ namespace GM11.Controllers
             _context = context;    
         }
 
-        // GET: Orders
+        // GET: Orders måske loade flere ind f.eks. costumer
         public async Task<IActionResult> Index()
         {
-            var gMContext = _context.Order.Include(o => o.Car);
-            return View(await gMContext.ToListAsync());
+            var gMContext = await _context.Order
+                .Include(o => o.Car)
+                .ThenInclude(i => i.CarType)
+                .Include(i => i.Costumer)
+                .AsNoTracking()
+                .ToListAsync();
+            return View(gMContext);
         }
 
         // GET: Orders/Details/5

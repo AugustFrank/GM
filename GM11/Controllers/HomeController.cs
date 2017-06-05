@@ -28,11 +28,9 @@ namespace GM11.Controllers
         public async Task<IActionResult> Index(int? id)
         {
             var viewModel = new CarIndexData();
-            viewModel.Cars = await _context.Car
+            viewModel.Cars = await _context.Car                               
                 .Include(i=>i.CarType)
-                
-                
-                
+                                                                                         
                 .AsNoTracking()
                 .OrderBy(i => i.CarType.UnitPrice)
                 .ToListAsync();
