@@ -7,6 +7,11 @@ using Microsoft.EntityFrameworkCore;
 using GM011.Models;
 using GM11.Models;
 using GM11.Models.GMViewModels;
+using MailKit.Net.Smtp;
+using MailKit.Security;
+using MimeKit;
+using System.Net;
+
 namespace GM11.Controllers
 {
     public class HomeController : Controller
@@ -24,7 +29,10 @@ namespace GM11.Controllers
         {
             var viewModel = new CarIndexData();
             viewModel.Cars = await _context.Car
-                .Include(i => i.CarType)
+                .Include(i=>i.CarType)
+                
+                
+                
                 .AsNoTracking()
                 .OrderBy(i => i.CarType.UnitPrice)
                 .ToListAsync();
@@ -58,6 +66,43 @@ namespace GM11.Controllers
         public IActionResult Error()
         {
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task SendEmailAsync(string email, string subject, string message)
+        {
+           
+            try
+            {
+                var em = new MimeMessage();
+                em.From.Add(new MailboxAddress(""));
+                em.To.Add(new MailboxAddress(""));
+                em.Subject = subject;
+                em.Body = new TextPart("Plain") { Text = message };
+
+                using (var client = new SmtpClient())
+                {
+                    var credential = new NetworkCredential
+                    {
+                        UserName = "",
+                        Password = ""
+                    };
+                    
+                    client.LocalDomain = "";
+                    await client.ConnectAsync("", 25, MailKit.Security.SecureSocketOptions.Auto).ConfigureAwait(false);
+                    await client.SendAsync(em).ConfigureAwait(false);
+                    await client.DisconnectAsync(true).ConfigureAwait(false);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            
+
+
         }
     }
 }

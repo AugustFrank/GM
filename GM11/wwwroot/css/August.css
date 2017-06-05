@@ -34,7 +34,17 @@
     padding-right: 0px;
     padding-left: 0px; 
 }
-
+header {
+    background-repeat: none;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color:black;
+}
 
 .HeaderPic {
     background-image: url(../images/isroad.jpg);
@@ -115,4 +125,11 @@
     position: absolute;
     top: 50%;
     transform: translate(-50%,-50%);
+}
+
+/******BOOKING FORM STYLES*******/
+
+.form-padding {
+    padding-right: 0px;
+    padding-left: 0px;
 }
