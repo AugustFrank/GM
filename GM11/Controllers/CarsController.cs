@@ -41,7 +41,7 @@ namespace GM11.Controllers
             }
             //if (typeID!=null)
             //{
-            //    ViewData["CourseID"] = typeID.Value;
+            //    ViewData["ID"] = typeID.Value;
 
 
             //}

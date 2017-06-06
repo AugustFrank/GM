@@ -1,11 +1,7 @@
-﻿@model GM011.Models.Costumer
-@{
-    ViewData["Title"] = "Contact";
-}
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
 
-
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
 <div class="col-md-4 col-md-offset-2">
     <h4 class="rowPadding"> We will contact you within 24 hours</h4> @*--der mangler noget styling--*@
     <div class="col-md-12 form-group">
@@ -13,7 +9,7 @@
             <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
         </div>
         <div class="col-md-6 form-group">
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter @Html.DisplayNameFor(Model=>Model.Email)">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
 
@@ -39,21 +35,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>

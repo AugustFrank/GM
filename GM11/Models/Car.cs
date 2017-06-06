@@ -24,7 +24,10 @@ namespace GM011.Models
         public string Fuel { get; set; } //find better solution?
         [Display(Name = "Fuel Consumption L/Km")]
         public string FuelPerKM { get; set; }
+
         public string Transmission { get; set; }
+
+
 
         public CarType CarType { get; set; }
         public ICollection<Order> Orders { get; set; }

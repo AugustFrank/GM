@@ -15,15 +15,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <None Remove="TestCertificate2.pfx" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="TestCertificate2.pfx" />
+=======
+    <Content Remove="wwwroot/js\jquery-ui.js" />
+    <Content Remove="wwwroot/js\jquery-ui.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+>>>>>>> bc46b5e9c2f8c8541180a0088b0a63c731c30e5f
     <Content Include="wwwroot\css\August.css" />
+    <Content Include="wwwroot\css\datepicker.css" />
+    <Content Include="wwwroot\css\normalize.css" />
+    <Content Include="wwwroot\images\xl7.jpg" />
     <Content Include="wwwroot\js\navfade.js" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MailKit" Version="1.16.1" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.1" />
