@@ -90,9 +90,27 @@ namespace GM11.Controllers
                 throw ex;
             }
 
-            
+        }
+        
+        [HttpPost]
+        public IActionResult FindCars(DateTime DateIn, DateTime DateOut)
+        {
+            var carList = _context.Car.ToList();
 
+            viewModel = carList;
 
+            foreach(var item in viewModel)
+            {
+                foreach(var order in _context.Order.ToList())
+                {
+                    if(order.DateIN >= DateIn && order.DateOut <= DateOut || order.DateOut <= DateIn && order.DateOut >= DateOut)
+                    {
+                        viewModel.Remove(order.Car);
+                    }
+                }
+            }
+
+            return View(viewModel);
         }
     }
 }

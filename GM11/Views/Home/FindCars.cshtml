@@ -1,0 +1,95 @@
+@model IEnumerable<GM011.Models.Car>
+
+@{
+    ViewData["Title"] = "FindCars";
+}
+
+<h2>FindCars</h2>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RegNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CurrentMilage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NextServiceMilage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Doors)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Seats)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fuel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FuelPerKM)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Transmission)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentMilage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NextServiceMilage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fuel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuelPerKM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transmission)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarType.CarTypeID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CarID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CarID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CarID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
