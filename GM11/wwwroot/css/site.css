@@ -127,9 +127,6 @@ footer{
 
 /* Datepicker */
 
-body {
-    background: url('../img/darkdenim3.png') repeat 0 0 #555;
-}
 /* DatePicker Container */
 .ui-datepicker {
     width: 216px;
