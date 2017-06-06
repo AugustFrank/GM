@@ -11,9 +11,15 @@
   <PropertyGroup>
     <UserSecretsId>aspnet-GM11-65e61671-5940-488b-b0ae-99312b605c1e</UserSecretsId>
     <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>TestCertificate2.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TestCertificate2.pfx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TestCertificate2.pfx" />
     <Content Include="wwwroot\css\August.css" />
     <Content Include="wwwroot\js\navfade.js" />
   </ItemGroup>
