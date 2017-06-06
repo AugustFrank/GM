@@ -14,11 +14,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <Content Remove="wwwroot/js\jquery-ui.js" />
     <Content Remove="wwwroot/js\jquery-ui.min.js" />
   </ItemGroup>
 
   <ItemGroup>
+=======
+>>>>>>> parent of d9da4ff... Certificate Commit. (.csproj)
     <Content Include="wwwroot\css\August.css" />
     <Content Include="wwwroot\css\datepicker.css" />
     <Content Include="wwwroot\css\normalize.css" />
