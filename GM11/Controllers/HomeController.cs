@@ -35,14 +35,6 @@ namespace GM11.Controllers
                 .OrderBy(i => i.CarType.UnitPrice)
                 .ToListAsync();
 
-           
-
-            foreach(Car item in _context.Car.ToList())
-            {
-                
-            }
-
-            //List.Add()
 
             return View(viewModel);
         }
