@@ -11,14 +11,23 @@
   <PropertyGroup>
     <UserSecretsId>aspnet-GM11-65e61671-5940-488b-b0ae-99312b605c1e</UserSecretsId>
     <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>TestCertificate2.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
+    <None Remove="TestCertificate2.pfx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TestCertificate2.pfx" />
+=======
     <Content Remove="wwwroot/js\jquery-ui.js" />
     <Content Remove="wwwroot/js\jquery-ui.min.js" />
   </ItemGroup>
 
   <ItemGroup>
+>>>>>>> bc46b5e9c2f8c8541180a0088b0a63c731c30e5f
     <Content Include="wwwroot\css\August.css" />
     <Content Include="wwwroot\css\normalize.css" />
     <Content Include="wwwroot\images\xl7.jpg" />
