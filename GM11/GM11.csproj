@@ -14,6 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot/images\arrow_left.png" />
     <Content Remove="wwwroot/js\jquery-ui.js" />
     <Content Remove="wwwroot/js\jquery-ui.min.js" />
   </ItemGroup>
