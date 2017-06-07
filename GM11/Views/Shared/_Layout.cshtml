@@ -50,21 +50,29 @@
         <hr />
         <footer>
             <div class="row rowPadding" >
-                <div class="col-md-4 ">
+                <div class="col-md-2 col-md-offset-1 col-md-push-1 ">
                     <p>&copy; 2017 - GM11</p>
 
                 </div>
-                <div class="col-md-4 ">
+                <div class="col-md-2 col-md-offset-1 col-md-push-1 ">
                     <p>test</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2 col-md-offset-1 col-md-push-1">
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                             <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                             <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                         </ul>
-                        
+                        <div class="">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"></a> 
+                        </div>
                     </div>
                 </div>
             </div>
