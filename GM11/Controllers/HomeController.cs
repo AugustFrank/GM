@@ -116,7 +116,9 @@ namespace GM11.Controllers
         [HttpPost]
         public IActionResult FindCars(DateTime DateIn, DateTime DateOut)
         {
-            var carList = _context.Car.ToList();
+            var carList = _context.Car
+                .Include(i => i.CarType)
+                .ToList();
 
             viewModel = carList;
 
@@ -124,7 +126,7 @@ namespace GM11.Controllers
             {
                 foreach(var order in _context.Order.ToList())
                 {
-                    if(order.DateIN >= DateIn && order.DateOut <= DateOut || order.DateOut <= DateIn && order.DateOut >= DateOut)
+                    if(order.DateIN >= DateIn && order.DateIN <= DateOut || order.DateOut >= DateIn && order.DateOut <= DateOut)
                     {
                         viewModel.Remove(order.Car);
                     }
