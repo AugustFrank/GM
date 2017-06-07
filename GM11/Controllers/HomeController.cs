@@ -18,7 +18,7 @@ namespace GM11.Controllers
     {
 
         private readonly GMContext _context;
-        private List<Models.GMViewModels.CarIndexData> Cars = new List<Models.GMViewModels.CarIndexData>();
+        //private List<Models.GMViewModels.CarIndexData> Cars = new List<Models.GMViewModels.CarIndexData>();
 
         public HomeController(GMContext context)
         {
@@ -122,22 +122,22 @@ namespace GM11.Controllers
 
             var viewMD = new Models.GMViewModels.CarIndexData();
 
-            Cars = _context.Car.ToList();
+            
            
 
 
             foreach(var item  in viewMD.Cars)
             {
-                foreach(var order in _context.Order.ToList())
+                foreach(var order in _context.Order)
                 {
                     if(order.DateIN >= DateIn && order.DateOut <= DateOut || order.DateIN <= DateIn && order.DateOut >= DateOut)
                     {
-                        viewMD.Cars.Remove(order.Car);
+                       
                     }
                 }
             }
 
-            return View(viewModel);
+            return View();
         }
     }
 }
