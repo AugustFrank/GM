@@ -59,36 +59,60 @@ namespace GM11.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task SendEmailAsync(string email, string subject, string message)
+        public IActionResult SendEmailAsync(string subject, string message, string email)
         {
            
             try
             {
                 var em = new MimeMessage();
-                em.From.Add(new MailboxAddress(""));
-                em.To.Add(new MailboxAddress(""));
+                em.From.Add(new MailboxAddress("mailbot","mailbot@greenmile.is"));
+                em.To.Add(new MailboxAddress("info", "info@greenmile.is"));
                 em.Subject = subject;
-                em.Body = new TextPart("Plain") { Text = message };
+                em.Body = new TextPart("html")
+                { Text ="New Message From" + "<br>"+message+"</br>" + " <br> space </br>" + email };
+
+                string smptServer = "asmtp.unoeuro.com";
+                int smptPortNumber = 587;
+
+
 
                 using (var client = new SmtpClient())
                 {
-                    var credential = new NetworkCredential
-                    {
-                        UserName = "",
-                        Password = ""
-                    };
-                    
-                    client.LocalDomain = "";
-                    await client.ConnectAsync("", 25, MailKit.Security.SecureSocketOptions.Auto).ConfigureAwait(false);
-                    await client.SendAsync(em).ConfigureAwait(false);
-                    await client.DisconnectAsync(true).ConfigureAwait(false);
+                   client.Connect(smptServer, smptPortNumber);
+                    //client.AuthenticationMechanisms.Remove("XOAUTH2");
+                    client.Authenticate("mailbot@greenmile.is", "kimschips");
+                   client.Send(em);
+                   client.Disconnect(true);
                 }
+                // old solution
+                #region MyRegion
+                //using (var client = new SmtpClient())
+                //{
+                //    client.Connect(smptServer, smptPortNumber, false);
+                //    var credential = new NetworkCredential
+                //    {
+
+                //        UserName = "mailbot@greenmile.is",
+                //        Password = "WickedAugustin"
+                //    };
+
+
+                //    await client.ConnectAsync("", 25, MailKit.Security.SecureSocketOptions.Auto).ConfigureAwait(false);
+                //    await client.SendAsync(em).ConfigureAwait(false);
+                //    await client.DisconnectAsync(true).ConfigureAwait(false);
+                //}
+                #endregion // old
+
+
+
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+            return View("Contact");
+
 
         }
         
