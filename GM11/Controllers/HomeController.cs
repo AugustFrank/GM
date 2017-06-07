@@ -18,7 +18,7 @@ namespace GM11.Controllers
     {
 
         private readonly GMContext _context;
-        private List<Car> viewModel = new List<Car>();
+        private List<Models.GMViewModels.CarIndexData> Cars = new List<Models.GMViewModels.CarIndexData>();
 
         public HomeController(GMContext context)
         {
@@ -27,7 +27,7 @@ namespace GM11.Controllers
 
         public async Task<IActionResult> Index(int? id)
         {
-            var viewModel = new CarIndexData();
+            var viewModel = new Models.GMViewModels.CarIndexData();
             viewModel.Cars = await _context.Car                               
                 .Include(i=>i.CarType)
                                                                                          
@@ -95,17 +95,20 @@ namespace GM11.Controllers
         [HttpPost]
         public IActionResult FindCars(DateTime DateIn, DateTime DateOut)
         {
-            var carList = _context.Car.ToList();
 
-            viewModel = carList;
+            var viewMD = new Models.GMViewModels.CarIndexData();
 
-            foreach(var item in viewModel)
+            Cars = _context.Car.ToList();
+           
+
+
+            foreach(var item  in viewMD.Cars)
             {
                 foreach(var order in _context.Order.ToList())
                 {
-                    if(order.DateIN >= DateIn && order.DateOut <= DateOut || order.DateOut <= DateIn && order.DateOut >= DateOut)
+                    if(order.DateIN >= DateIn && order.DateOut <= DateOut || order.DateIN <= DateIn && order.DateOut >= DateOut)
                     {
-                        viewModel.Remove(order.Car);
+                        viewMD.Cars.Remove(order.Car);
                     }
                 }
             }

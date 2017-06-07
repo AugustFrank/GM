@@ -1,95 +1,130 @@
-@model IEnumerable<GM011.Models.Car>
+@model GM11.Models.GMViewModels.CarIndexData /*GM011.Models.Car*/
 
 @{
     ViewData["Title"] = "FindCars";
 }
 
-<h2>FindCars</h2>
+<header>
+    <div class="container-fluid HeaderPic">
+        <div class="slider-container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Welcome to Green Mile</div>
+                <div class="intro-heading">We are not ready yet!</div>
+            </div>
+            @*start of from*@
 
-@*<p>
-    <a asp-action="Create">Create New</a>
-</p>*@
-<table class="table">
-    <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.RegNo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ServiceID)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Year)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CurrentMilage)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NextServiceMilage)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Doors)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Seats)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Fuel)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FuelPerKM)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Transmission)
-                </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CarType)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServiceID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CurrentMilage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NextServiceMilage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Doors)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Seats)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fuel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FuelPerKM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Transmission)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarType.CarTypeID)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CarID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CarID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CarID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            @using (Html.BeginForm("FindCars", "Home"))
+            {
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="lbl_text"> Pick Up Date</label>
+                                <input name="DateIn" id="start_datepicker" class="form-control" type="text" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="lbl_text"> Return Date</label>
+                                <input name="DateOut" id="end_datepicker" class="form-control" type="text" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="lbl_text"> Pick Up location </label>
+                                <select class="form-control" type="datetime-local">
+                                    <option>Reykjavik</option>
+                                    <option>Keflavik</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="lbl_text"> Pick Up return location</label>
+                                <select class="form-control" type="datetime-local">
+                                    <option>Reykjavik</option>
+                                    <option>Keflavik</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="row">
+        <div class="sectionProducts col-md-8 col-md-offset-2 wrapperShadow">
+            <div class="row ">
+                <div class="col-lg-12">
+                    <header class="page-header ProductSection">
+                        <h2 class="ProductSection sectionTitle">
+                            Found Vehicles
+                        </h2>
+                    </header>
+
+                </div>
+            </div>
+            <div class="row rowPadding">
+
+                @foreach (var item in Model.Cars)
+                {
+                    <div class="col-lg-12">
+                        <div class="CarInfo">
+                            <div class="col-lg-2">
+                                <div class="Car_picture">
+                                    <img src="~/images/@Html.DisplayFor(model => item.CarType.ImagePath)" />
+                                </div>
+                            </div>
+                            <div class="col-lg-10">
+                                <table class="SingleCarFound">
+                                    <tr>
+                                        <td class="InfoTag">Reg Number</td>
+                                        <td class="Info">@Html.DisplayFor(modelItem => item.RegNo)</td>
+                                        <td class="InfoTag">Service ID</td>
+                                        <td class="Info">@Html.DisplayFor(modelItem => item.ServiceID)</td>
+                                        <td class="InfoTag">Year</td>
+                                        <td class="Info">@Html.DisplayFor(modelItem => item.Year)</td>
+                                        <td class="InfoTag">Current Milage</td>
+                                        <td class="Info">@Html.DisplayFor(modelItem => item.CurrentMilage)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="InfoTag">Next Service Milage</td>
+                                        <td class="Info">@Html.DisplayFor(modelItem => item.NextServiceMilage)</td>
+                                        <td class="InfoTag">Doors</td>
+                                        <td class="Info">@Html.DisplayFor(modelItem => item.Doors)</td>
+                                        <td class="InfoTag">Seats</td>
+                                        <td class="Info">@Html.DisplayFor(modelItem => item.Seats)</td>
+                                        <td class="InfoTag">Fuel in Liters</td>
+                                        <td class="Info">@Html.DisplayFor(modelItem => item.Fuel)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="InfoTag">Fuel per KM</td>
+                                        <td class="Info">@Html.DisplayFor(modelItem => item.FuelPerKM)</td>
+                                        <td class="InfoTag">Transmission</td>
+                                        <td class="Info">@Html.DisplayFor(modelItem => item.Transmission)</td>
+                                        <td class="InfoTag">Car Type</td>
+                                        <td class="Info">@Html.DisplayFor(modelItem => item.CarType)</td>
+                                        <td class="InfoTag"></td>
+                                        <td class="Info">Button</td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+           
+            </div>
+
+        </div>
+    </div>
+</section>

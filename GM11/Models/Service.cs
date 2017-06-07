@@ -22,7 +22,7 @@ namespace GM011.Models
         [DataType(DataType.MultilineText)]
         public string Discription { get; set; }
 
-        public Car Car { get; set; }
+        public CarIndexData Car { get; set; }
         public ICollection<Parts> Parts { get; set; }
         public Garage Garage { get; set; }
     }

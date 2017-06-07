@@ -13,7 +13,7 @@ namespace GM11.Models.GMViewModels
         public IEnumerable<Costumer> Costumers { get; set; }
 
 
-        public IEnumerable<Car> Cars { get; set; }
+        public IEnumerable<GM011.Models.CarIndexData> Cars { get; set; }
         public IEnumerable<CarType> CarTypes { get; set; }
         public IEnumerable<Service> Services { get; set; }
 
