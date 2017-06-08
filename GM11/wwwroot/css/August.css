@@ -6,7 +6,7 @@ body {
 
 .body-content {
     position: relative;
-    min-height: 93vh;
+    
     padding-right: 0px;
     padding-left: 0px;
 }
@@ -180,19 +180,19 @@ h2 {
 .fa {
     
 }
-
-.indexAbout {
-    min-height:550px;
+.push100 {
+    padding-top:50px;
+    padding-bottom:50px;
 }
-
-
+.push200{
+    padding-top:100px;
+    padding-bottom:100px
+}
 
 /******FOOTER STYLES*******/
 
 footer {
-    position:absolute;
-    bottom:0;
-    left:0;
+   
     width:100%;
     background-color: #3c763d;
     margin-bottom: 0px;
