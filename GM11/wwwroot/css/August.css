@@ -1,5 +1,47 @@
-﻿body {
+﻿/********MAIN STYLES********/
+
+body {
     padding-bottom:0px;
+}
+
+.body-content {
+    position: relative;
+    min-height: 93vh;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+header {
+    background-repeat: none;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    padding-bottom: 25px;
+}
+
+.HeaderPic {
+    background-image: url(../images/isroad.jpg);
+    background-position: center;
+    padding-bottom: 200px;
+}
+
+.intro-heading {
+    color:black;
 }
 
 /********NAVIGATION STYLES********/
@@ -8,9 +50,37 @@
     margin-top:-15px;
 }
 
-.sectionProducts .sectionTitle {
-    color: #454141;
+.navbar-fixed-top {
+    background-color:#3c763d;
 }
+
+.navbar-inverse {
+    border:none;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color:white;
+    color: black;
+}
+
+/******BOOKING FORM STYLES*******/
+
+.form-padding {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+/********SECTION STYLES********/
+    
+.sectionProducts .sectionTitle {
+        color: #454141;
+}
+
 .sectionProducts .sectionTitle {
     margin: 0;
     font-size: 48px;
@@ -24,37 +94,11 @@
     border: 0;
     text-align: center;
 }
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
 
-.body-content {
-    padding-right: 0px;
-    padding-left: 0px; 
-}
-header {
-    background-repeat: none;
-    background-attachment: scroll;
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    text-align: center;
-    color:black;
-}
-h2 {
-    padding-bottom:25px;
-}
 
-.HeaderPic {
-    background-image: url(../images/isroad.jpg);
-    background-position: center;
-    padding-bottom: 200px;
-}
+
+
+
 
 /*Here Starts the Excerpt */
 .productDescription {
@@ -137,18 +181,21 @@ h2 {
     
 }
 
-/******BOOKING FORM STYLES*******/
-
-.form-padding {
-    padding-right: 0px;
-    padding-left: 0px;
+.indexAbout {
+    min-height:550px;
 }
+
+
 
 /******FOOTER STYLES*******/
 
 footer {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
     background-color: #3c763d;
-    margin-bottom: -5px;
+    margin-bottom: 0px;
     padding-bottom: 10px;
     padding-top: 15px;
 }
