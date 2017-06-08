@@ -57,12 +57,12 @@ namespace GM11.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult SendEmailAsync(string subject, string message, string email)
         {
-            string smptServer = "asmtp.unoeuro.com";
-            int smptPortNumber = 587;
+            
 
             try
             {
@@ -73,9 +73,9 @@ namespace GM11.Controllers
                 em.Body = new TextPart("html")
                 { Text = "New Message From" + "<br>" + message + "</br>" + " <br> space </br>" + email };
 
-               
 
-
+                string smptServer = "asmtp.unoeuro.com";
+                int smptPortNumber = 587;
 
                 using (var client = new SmtpClient())
                 {
@@ -108,7 +108,7 @@ namespace GM11.Controllers
 
                 throw ex;
             }
-            return View("Contact");
+            return View("contact");
 
 
         }

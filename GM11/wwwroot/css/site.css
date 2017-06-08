@@ -334,6 +334,7 @@ th {
 
 /* Find Cars*/
 
+<<<<<<< HEAD
 .Car {
     width: 100%;
     border: 1px solid rgba(250, 250, 250, .5);
@@ -390,3 +391,7 @@ table.tableCarInfo {
 }
 
 /*Find Cars END*/
+=======
+/* Datepicker END */
+
+>>>>>>> 9c15fd793e813026ebeac46cc51b62da0951138f

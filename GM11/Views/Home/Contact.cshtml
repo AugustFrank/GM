@@ -2,16 +2,42 @@
 @{
     ViewData["Title"] = "Contact";
 }
-<h2>@ViewData["Title"].</h2>
+
 <h3>@ViewData["Message"]</h3>
 
+@using (Html.BeginForm("SendEmailAsync", "Home")) {
+<div class="row ">
 
-<div class="col-md-4 col-md-offset-2">
-    <h4 class="rowPadding"> We will contact you within 24 hours</h4> @*--der mangler noget styling--*@
-    
+    <h4 class="rowPadding col-md-offset-2"> We will contact you within 24 hours</h4> @*--der mangler noget styling--*@
+
+    <div class="col-md-6 col-md-offset-2">
+        <div class="form-group">
+            <label class="lbl_text"> Name</label>
+            <input name="subject" id="" class="form-control" type="text" />
+        </div>
+    </div>
+    <div class="col-md-6  col-md-offset-2">
+        <div class="form-group">
+            <label class="lbl_text"> Email </label>
+            <input name="email" id="" class="form-control" type="text" />
+        </div>
+    </div>
+    <div class="col-md-6  col-md-offset-2">
+        <div class="form-group">
+            <label class="lbl_text"> Message </label>
+            <textarea name="message" id="" class="form-control" type="text" ></textarea>
+        </div>
+    </div>
+   <div class="col-md-6  col-md-offset-2">
+       <div class="form-group">
+           <button type="submit" class="btn btn-secondary">Submit</button>
+       </div>
+   </div>
         
-    
+   
+
 </div>
+}
 
 
 
