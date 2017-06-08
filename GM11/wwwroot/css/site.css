@@ -51,15 +51,15 @@ textarea {
 
 .btn-secondary {
     color: #fff;
-    background-color: #285d47;
-    border-color: #285d47;
+    background-color: #3c763d;
+    border-color: #3c763d;
 }
 
 .btn-secondary:focus,
 .btn-secondary.focus {
     color: #fff;
-    background-color: #23533f;
-    border-color: #1f513c;
+    background-color: #3c763d;
+    border-color: #3c763d;
 }
 
 .btn-secondary:hover {
@@ -72,8 +72,8 @@ textarea {
 .btn-secondary.active,
 .open > .dropdown-toggle.btn-secondary {
     color: #fff;
-    background-color: #23533f;
-    border-color: #23533f;
+    background-color: #285d47;
+    border-color: #285d47;
 }
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
@@ -336,10 +336,12 @@ th {
 
 .Car {
     width: 100%;
-    border: 1px solid rgba(250, 250, 250, .5);
+    border: 1px solid #285d47;
     margin-bottom: 5px;
     clear: both;
     float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .CarPic {
