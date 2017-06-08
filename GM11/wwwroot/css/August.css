@@ -118,6 +118,7 @@ h2 {
 .rowpaddingbottom {
     padding-bottom: 50px;
 }
+
 .services .serviceExcerpt {
     width: 20%;
     padding: 10px 20px;
@@ -186,14 +187,15 @@ h2 {
 }
 .push200{
     padding-top:100px;
-    padding-bottom:100px
+    padding-bottom:100px;
+}
+.push25down{
+    padding-bottom:25px;
 }
 
 /******FOOTER STYLES*******/
-
 footer {
-   
-    width:100%;
+    width: 100%;
     background-color: #3c763d;
     margin-bottom: 0px;
     padding-bottom: 10px;
@@ -229,4 +231,9 @@ footer div div h4 {
     margin-top:15px;
     color: white;
     border-top: 1px solid white;
+}
+
+
+.labelWhiteText{
+    color:white;
 }
