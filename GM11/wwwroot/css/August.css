@@ -1,4 +1,5 @@
 ﻿body {
+    padding-bottom:0px;
 }
 
 /********NAVIGATION STYLES********/
@@ -122,15 +123,18 @@ h2 {
     margin: 0 auto;
 }
 /* icons*/
-.fa-car {
-    
-}
-.fa {
+.fa-car,
+.fa-credit-card,
+.fa-calendar-check-o,
+.fa-plus-circle {
     font: normal normal normal 14px/1 FontAwesome;
     font-size: 30px;
     position: absolute;
     top: 50%;
     transform: translate(-50%,-50%);
+}
+.fa {
+    
 }
 
 /******BOOKING FORM STYLES*******/
@@ -138,4 +142,44 @@ h2 {
 .form-padding {
     padding-right: 0px;
     padding-left: 0px;
+}
+
+/******FOOTER STYLES*******/
+
+footer {
+    background-color: #3c763d;
+    margin-bottom: -5px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
+
+footer div div h4 {
+    color:white;
+    opacity:0.5;
+  
+}
+
+.footerlist {
+    padding-left:0px;
+}
+
+.footerlist i {
+    color:white;
+}
+
+.footerlist li {
+    list-style-type: none;
+    color:white;
+}
+
+.footerlist li a {
+    text-decoration:none;
+    color:white;
+}
+
+.copyright {
+    padding-top: 15px;
+    margin-top:15px;
+    color: white;
+    border-top: 1px solid white;
 }

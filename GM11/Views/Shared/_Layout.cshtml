@@ -10,9 +10,10 @@
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
         <link href="~/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
-        <link href="~/css/August.css" rel="stylesheet" />
+        
         <link rel="stylsheet" href="~/css/datepicker.css" type="text/css" />
         <link rel="stylesheet" href="~/css/normalize.css" type="text/css" />
+        <link href="~/css/August.css" rel="stylesheet" />
         
     </environment>
     <environment names="Staging,Production">
@@ -20,6 +21,7 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link href="~/css/August.css" rel="stylesheet" />
     </environment>
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
@@ -47,34 +49,34 @@
     </nav>
     <div class="container-fluid body-content">
         @RenderBody()
-        <hr />
+   
         <footer>
             <div class="row rowPadding" >
-                <div class="col-md-2 col-md-offset-1 col-md-push-1 ">
-                    <p>&copy; 2017 - GM11</p>
-
+                <div class="col-md-3 col-md-offset-2  ">
+                    <h4>Green Mile</h4>
+                    <ul class="footerlist">
+                       <li>Tolderlundsvej 60 ST TV</li>
+                       <li>5000 Odense C</li>
+                       <li>CVR: 12345678</li>
+                   </ul>
+                    
                 </div>
-                <div class="col-md-2 col-md-offset-1 col-md-push-1 ">
-                    <p>test</p>
+                
+                <div class="col-md-3 col-md-offset-1">
+                    <h4>Sitemap</h4>
+                    <ul class="footerlist">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>  
                 </div>
-                <div class="col-md-2 col-md-offset-1 col-md-push-1">
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                        </ul>
-                        <div class="">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"></a> 
-                        </div>
-                    </div>
+                <div class="col-md-3 ">  
+                    <h4>Follow us</h4>
+                    <div class="footerlist"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></div>                                     
                 </div>
+            </div>
+            <div class="row text-center copyright">
+                <p>&copy; 2017 - GM11</p>
             </div>
         </footer>
     </div>
