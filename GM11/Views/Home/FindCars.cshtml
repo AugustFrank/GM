@@ -1,4 +1,4 @@
-@model GM11.Models.GMViewModels.CarIndexData /*GM011.Models.Car*/
+@model IEnumerable<GM011.Models.Car>
 
 @{
     ViewData["Title"] = "FindCars";
@@ -15,7 +15,7 @@
 
             @using (Html.BeginForm("FindCars", "Home"))
             {
-                <div class="row">
+                <div class="row push25down">
                     <div class="col-md-8 col-md-offset-2">
 
                         <div class="col-md-3">
@@ -72,57 +72,105 @@
 
                 </div>
             </div>
+
             <div class="row rowPadding">
+                <div class="col-lg-12">
+                    @foreach (var item in Model)
+                    {
+                            <div class="Car">
 
-                @foreach (var item in Model.Cars)
-                {
-                    <div class="col-lg-12">
-                        <div class="CarInfo">
-                            <div class="col-lg-2">
-                                <div class="Car_picture">
-                                    <img src="~/images/@Html.DisplayFor(model => item.CarType.ImagePath)" />
+                                <div class="col-lg-4">
+                                    <div class="CarPic">
+                                        <img src="~/images/@Html.DisplayFor(model => item.CarType.ImagePath)" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-10">
-                                <table class="SingleCarFound">
-                                    <tr>
-                                        <td class="InfoTag">Reg Number</td>
-                                        <td class="Info">@Html.DisplayFor(modelItem => item.RegNo)</td>
-                                        <td class="InfoTag">Service ID</td>
-                                        <td class="Info">@Html.DisplayFor(modelItem => item.ServiceID)</td>
-                                        <td class="InfoTag">Year</td>
-                                        <td class="Info">@Html.DisplayFor(modelItem => item.Year)</td>
-                                        <td class="InfoTag">Current Milage</td>
-                                        <td class="Info">@Html.DisplayFor(modelItem => item.CurrentMilage)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="InfoTag">Next Service Milage</td>
-                                        <td class="Info">@Html.DisplayFor(modelItem => item.NextServiceMilage)</td>
-                                        <td class="InfoTag">Doors</td>
-                                        <td class="Info">@Html.DisplayFor(modelItem => item.Doors)</td>
-                                        <td class="InfoTag">Seats</td>
-                                        <td class="Info">@Html.DisplayFor(modelItem => item.Seats)</td>
-                                        <td class="InfoTag">Fuel in Liters</td>
-                                        <td class="Info">@Html.DisplayFor(modelItem => item.Fuel)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="InfoTag">Fuel per KM</td>
-                                        <td class="Info">@Html.DisplayFor(modelItem => item.FuelPerKM)</td>
-                                        <td class="InfoTag">Transmission</td>
-                                        <td class="Info">@Html.DisplayFor(modelItem => item.Transmission)</td>
-                                        <td class="InfoTag">Car Type</td>
-                                        <td class="Info">@Html.DisplayFor(modelItem => item.CarType)</td>
-                                        <td class="InfoTag"></td>
-                                        <td class="Info">Button</td>
-                                    </tr>
 
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                }
+                                <div class="col-lg-8">
+                                    <div class="CarInfo">
 
-           
+                                        <table class="tableCarInfo">
+
+                                            <tr>
+                                                <td class="tdCarNaming">
+                                                    @Html.DisplayNameFor(model => model.CarType)
+                                                </td>
+                                                <td class="tdCarInfo">
+                                                    @Html.DisplayFor(model => item.CarType.Model)
+                                                </td>
+                                                <td class="tdCarNaming">
+                                                    @Html.DisplayNameFor(model => model.RegNo)
+                                                </td>
+                                                <td class="tdCarInfo">
+                                                    @Html.DisplayFor(model => item.RegNo)
+                                                </td>
+                                                <td class="tdCarNaming">
+                                                     @Html.DisplayNameFor(model => model.ServiceID)
+                                                </td>
+                                                <td class="tdCarInfo">
+                                                    @Html.DisplayFor(model => item.ServiceID)
+                                                </td>
+                                                <td class="tdCarNaming">
+                                                    @Html.DisplayNameFor(model => model.CurrentMilage)
+                                                </td>
+                                                <td class="tdCarInfo">
+                                                    @Html.DisplayFor(model => item.CurrentMilage)
+                                                </td>
+                                                <td class="tdCarNaming">
+                                                    @Html.DisplayNameFor(model => model.Transmission)
+                                                </td>
+                                                <td class="tdCarInfo">
+                                                    @Html.DisplayFor(model => item.Transmission)
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="tdCarNaming">
+                                                    @Html.DisplayNameFor(model => model.Year)
+                                                </td>
+                                                <td class="tdCarInfo">
+                                                    @Html.DisplayFor(model => item.Year)
+                                                </td>
+                                                <td class="tdCarNaming">
+                                                    @Html.DisplayNameFor(model => model.Doors)
+                                                </td>
+                                                <td class="tdCarInfo">
+                                                    @Html.DisplayFor(model => item.Doors)
+                                                </td>
+                                                <td class="tdCarNaming">
+                                                    @Html.DisplayNameFor(model => model.Seats)
+                                                </td>
+                                                <td class="tdCarInfo">
+                                                    @Html.DisplayFor(model => item.Seats)
+                                                </td>
+                                                <td class="tdCarNaming">
+                                                    @Html.DisplayNameFor(model => model.Fuel)
+                                                </td>
+                                                <td class="tdCarInfo">
+                                                    @Html.DisplayFor(model => item.Fuel)
+                                                </td>
+                                                <td class="tdCarNaming">
+                                                    @Html.DisplayNameFor(model => model.FuelPerKM)
+                                                </td>
+                                                <td class="tdCarInfo">
+                                                    @Html.DisplayFor(model => item.FuelPerKM)
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <div class="chooseCar">
+                                            <input type="submit" name="ChooseCar" class="btn btn-secondary" value="Choose" />
+                                        </div>
+
+
+                                        @*<script src="~/js/site.js" type="text/javascript">
+                                             ShowCar(@Html.DisplayNameFor(model => model.RegNo), @Html.DisplayFor(model => item.RegNo), @Html.DisplayNameFor(model => model.ServiceID), @Html.DisplayFor(model => item.ServiceID), @Html.DisplayNameFor(model => model.CurrentMilage), @Html.DisplayFor(model => item.CurrentMilage), @Html.DisplayNameFor(model => model.Doors), @Html.DisplayFor(model => item.Doors), @Html.DisplayNameFor(model => model.Seats), @Html.DisplayFor(model => item.Seats), @Html.DisplayNameFor(model => model.Fuel), @Html.DisplayFor(model => item.Fuel), @Html.DisplayNameFor(model => model.FuelPerKM), @Html.DisplayFor(model => item.FuelPerKM), @Html.DisplayNameFor(model => model.Transmission), @Html.DisplayFor(model => item.Transmission), @Html.DisplayNameFor(model => model.CarType), "Ford" @Html.DisplayFor(model => item.CarType));
+                                        </script> !DOES NOT WORK! *@
+                                    </div>
+                                </div>
+
+                            </div>
+                    }
+                </div>
             </div>
 
         </div>

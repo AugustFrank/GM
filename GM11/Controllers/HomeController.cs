@@ -18,7 +18,7 @@ namespace GM11.Controllers
     {
 
         private readonly GMContext _context;
-        //private List<Models.GMViewModels.CarIndexData> Cars = new List<Models.GMViewModels.CarIndexData>();
+        private List<Car> viewModel = new List<Car>();
 
         public HomeController(GMContext context)
         {
@@ -27,7 +27,7 @@ namespace GM11.Controllers
 
         public async Task<IActionResult> Index(int? id)
         {
-            var viewModel = new Models.GMViewModels.CarIndexData();
+            var viewModel = new CarIndexData();
             viewModel.Cars = await _context.Car                               
                 .Include(i=>i.CarType)
                                                                                          
@@ -57,32 +57,32 @@ namespace GM11.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult SendEmailAsync(string subject, string message, string email)
         {
-           
+            
+
             try
             {
                 var em = new MimeMessage();
-                em.From.Add(new MailboxAddress("mailbot","mailbot@greenmile.is"));
+                em.From.Add(new MailboxAddress("mailbot", "mailbot@greenmile.is"));
                 em.To.Add(new MailboxAddress("info", "info@greenmile.is"));
                 em.Subject = subject;
                 em.Body = new TextPart("html")
-                { Text ="New Message From" + "<br>"+message+"</br>" + " <br> space </br>" + email };
+                { Text = "New Message From" + "<br>" + message + "</br>" + " <br> space </br>" + email };
+
 
                 string smptServer = "asmtp.unoeuro.com";
                 int smptPortNumber = 587;
 
-
-
                 using (var client = new SmtpClient())
                 {
-                   client.Connect(smptServer, smptPortNumber);
-                    //client.AuthenticationMechanisms.Remove("XOAUTH2");
+                    client.Connect(smptServer, smptPortNumber);                   
                     client.Authenticate("mailbot@greenmile.is", "kimschips");
-                   client.Send(em);
-                   client.Disconnect(true);
+                    client.Send(em);
+                    client.Disconnect(true);
                 }
                 // old solution
                 #region MyRegion
@@ -102,42 +102,38 @@ namespace GM11.Controllers
                 //    await client.DisconnectAsync(true).ConfigureAwait(false);
                 //}
                 #endregion // old
-
-
-
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-            return View("Contact");
+            return View("contact");
 
 
         }
-        
+
         [HttpPost]
         public IActionResult FindCars(DateTime DateIn, DateTime DateOut)
         {
+            var carList = _context.Car
+                .Include(i => i.CarType)
+                .ToList();
 
-            var viewMD = new Models.GMViewModels.CarIndexData();
+            viewModel = carList;
 
-            
-           
-
-
-            foreach(var item  in viewMD.Cars)
+            foreach(var item in viewModel)
             {
-                foreach(var order in _context.Order)
+                foreach(var order in _context.Order.ToList())
                 {
-                    if(order.DateIN >= DateIn && order.DateOut <= DateOut || order.DateIN <= DateIn && order.DateOut >= DateOut)
+                    if(order.DateIN >= DateIn && order.DateIN <= DateOut || order.DateOut >= DateIn && order.DateOut <= DateOut)
                     {
-                       
+                        viewModel.Remove(order.Car);
                     }
                 }
             }
 
-            return View();
+            return View(viewModel);
         }
     }
 }

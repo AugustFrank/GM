@@ -1,4 +1,47 @@
-﻿body {
+﻿/********MAIN STYLES********/
+
+body {
+    padding-bottom:0px;
+}
+
+.body-content {
+    position: relative;
+    
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+header {
+    background-repeat: none;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    padding-bottom: 25px;
+}
+
+.HeaderPic {
+    background-image: url(../images/isroad.jpg);
+    background-position: center;
+    padding-bottom: 200px;
+}
+
+.intro-heading {
+    color:black;
 }
 
 /********NAVIGATION STYLES********/
@@ -7,9 +50,37 @@
     margin-top:-15px;
 }
 
-.sectionProducts .sectionTitle {
-    color: #454141;
+.navbar-fixed-top {
+    background-color:#3c763d;
 }
+
+.navbar-inverse {
+    border:none;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color:white;
+    color: black;
+}
+
+/******BOOKING FORM STYLES*******/
+
+.form-padding {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+/********SECTION STYLES********/
+    
+.sectionProducts .sectionTitle {
+        color: #454141;
+}
+
 .sectionProducts .sectionTitle {
     margin: 0;
     font-size: 48px;
@@ -23,37 +94,11 @@
     border: 0;
     text-align: center;
 }
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
 
-.body-content {
-    padding-right: 0px;
-    padding-left: 0px; 
-}
-header {
-    background-repeat: none;
-    background-attachment: scroll;
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    text-align: center;
-    color:black;
-}
-h2 {
-    padding-bottom:25px;
-}
 
-.HeaderPic {
-    background-image: url(../images/isroad.jpg);
-    background-position: center;
-    padding-bottom: 200px;
-}
+
+
+
 
 /*Here Starts the Excerpt */
 .productDescription {
@@ -73,6 +118,7 @@ h2 {
 .rowpaddingbottom {
     padding-bottom: 50px;
 }
+
 .services .serviceExcerpt {
     width: 20%;
     padding: 10px 20px;
@@ -122,20 +168,72 @@ h2 {
     margin: 0 auto;
 }
 /* icons*/
-.fa-car {
-    
-}
-.fa {
+.fa-car,
+.fa-credit-card,
+.fa-calendar-check-o,
+.fa-plus-circle {
     font: normal normal normal 14px/1 FontAwesome;
     font-size: 30px;
     position: absolute;
     top: 50%;
     transform: translate(-50%,-50%);
 }
+.fa {
+    
+}
+.push100 {
+    padding-top:50px;
+    padding-bottom:50px;
+}
+.push200{
+    padding-top:100px;
+    padding-bottom:100px;
+}
+.push25down{
+    padding-bottom:25px;
+}
 
-/******BOOKING FORM STYLES*******/
+/******FOOTER STYLES*******/
+footer {
+    width: 100%;
+    background-color: #3c763d;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
 
-.form-padding {
-    padding-right: 0px;
-    padding-left: 0px;
+footer div div h4 {
+    color:white;
+    opacity:0.5;
+  
+}
+
+.footerlist {
+    padding-left:0px;
+}
+
+.footerlist i {
+    color:white;
+}
+
+.footerlist li {
+    list-style-type: none;
+    color:white;
+}
+
+.footerlist li a {
+    text-decoration:none;
+    color:white;
+}
+
+.copyright {
+    padding-top: 15px;
+    margin-top:15px;
+    color: white;
+    border-top: 1px solid white;
+}
+
+
+.labelWhiteText{
+    color:white;
 }
