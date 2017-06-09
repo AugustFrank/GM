@@ -25,7 +25,7 @@ namespace GM11.Controllers
         // GET: Cars
         public async Task<IActionResult> Index(int? id, int? typeID)
         {
-            var viewModel = new CarIndexData();
+            var viewModel = new Models.GMViewModels.CarIndexData();
             viewModel.Cars = await _context.Car
                 .Include(i => i.CarType)
                 .Include(i => i.Services)
@@ -36,7 +36,7 @@ namespace GM11.Controllers
             if (id != null)
             {
                 ViewData["CarID"] = id.Value;
-                Car Cars = viewModel.Cars.Where(i => i.CarID == id.Value).Single();
+                GM011.Models.CarIndexData Cars = viewModel.Cars.Where(i => i.CarID == id.Value).Single();
                 viewModel.CarTypes = viewModel.Cars.Select(i => i.CarType);
             }
             //if (typeID!=null)
@@ -81,7 +81,7 @@ namespace GM11.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CarID,RegNo,CarTypeID,ServiceID,Year,CurrentMilage,NextServiceMilage,Doors,Seats,Fuel,FuelPerKM,Transmission")] Car car)
+        public async Task<IActionResult> Create([Bind("CarID,RegNo,CarTypeID,ServiceID,Year,CurrentMilage,NextServiceMilage,Doors,Seats,Fuel,FuelPerKM,Transmission")] GM011.Models.CarIndexData car)
         {
             if (ModelState.IsValid)
             {
@@ -115,7 +115,7 @@ namespace GM11.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CarID,RegNo,CarTypeID,ServiceID,Year,CurrentMilage,NextServiceMilage,Doors,Seats,Fuel,FuelPerKM,Transmission")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("CarID,RegNo,CarTypeID,ServiceID,Year,CurrentMilage,NextServiceMilage,Doors,Seats,Fuel,FuelPerKM,Transmission")] GM011.Models.CarIndexData car)
         {
             if (id != car.CarID)
             {

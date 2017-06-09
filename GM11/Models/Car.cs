@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace GM011.Models
 {
-    public class Car
+    public class CarIndexData
     { // make requirements and annotations and add cms to update the site
 
         public int CarID { get; set; }

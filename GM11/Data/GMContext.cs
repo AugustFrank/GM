@@ -16,7 +16,7 @@ namespace GM11.Models
 
         public DbSet<GM011.Models.CarType> CarType { get; set; }
 
-        public DbSet<GM011.Models.Car> Car { get; set; }
+        public DbSet<GM011.Models.CarIndexData> Car { get; set; }
 
         public DbSet<GM011.Models.Service> Service { get; set; }
 

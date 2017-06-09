@@ -21,6 +21,6 @@ namespace GM011.Models
 
         public string ImagePath { get; set; }
 
-        public  ICollection<Car> Cars { get; set; }
+        public  ICollection<CarIndexData> Cars { get; set; }
     }
 }
