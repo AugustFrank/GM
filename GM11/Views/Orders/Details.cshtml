@@ -1,0 +1,78 @@
+@model GM011.Models.Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOut)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateOut)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateIN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateIN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MileageOut)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MileageOut)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MileageIn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MileageIn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MileageAllowance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MileageAllowance)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ExcessMileage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ExcessMileage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Discription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Discription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Car)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Car.CarID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.OrderID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
