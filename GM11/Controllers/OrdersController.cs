@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,12 +8,16 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GM011.Models;
 using GM11.Models;
+using System.Reflection;
+using GM11.Services;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace GM11.Controllers
 {
     public class OrdersController : Controller
     {
         private readonly GMContext _context;
+
 
         public OrdersController(GMContext context)
         {
@@ -71,6 +76,17 @@ namespace GM11.Controllers
         {
             if (ModelState.IsValid)
             {
+
+               /* var s = new Order();
+                s = order;
+
+                CipherService Crypto = new CipherService();
+
+                foreach (PropertyInfo info in s.GetType().GetProperties())
+                {
+                    Crypto.EncryptString(info.ToString());
+                }*/
+
                 _context.Add(order);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
