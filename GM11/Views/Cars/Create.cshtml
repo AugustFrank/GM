@@ -6,7 +6,7 @@
 
 <h2>Create</h2>
 
-<form asp-action="Create">
+<form asp-action="Create" id="carscreate-form">
     <div class="form-horizontal">
         <h4>Car</h4>
         <hr />
@@ -14,14 +14,14 @@
         <div class="form-group">
             <label asp-for="RegNo" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="RegNo" class="form-control" />
+                <input asp-for="RegNo" class="form-control" name="regno" />
                 <span asp-validation-for="RegNo" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <label asp-for="CarTypeID" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="CarTypeID" class ="form-control" asp-items="ViewBag.CarTypeID"></select>
+                <select asp-for="CarTypeID" class="form-control" asp-items="ViewBag.CarTypeID"></select>
             </div>
         </div>
         <div class="form-group">
@@ -34,7 +34,7 @@
         <div class="form-group">
             <label asp-for="Year" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Year" class="form-control" />
+                <input asp-for="Year" class="form-control" name="year" />
                 <span asp-validation-for="Year" class="text-danger"></span>
             </div>
         </div>
@@ -69,21 +69,21 @@
         <div class="form-group">
             <label asp-for="Fuel" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Fuel" class="form-control" />
+                <input asp-for="Fuel" class="form-control" name="fuel" />
                 <span asp-validation-for="Fuel" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <label asp-for="FuelPerKM" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="FuelPerKM" class="form-control" />
+                <input asp-for="FuelPerKM" class="form-control" name="fuelconsumption" />
                 <span asp-validation-for="FuelPerKM" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <label asp-for="Transmission" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Transmission" class="form-control" />
+                <input asp-for="Transmission" class="form-control" name="transmission" />
                 <span asp-validation-for="Transmission" class="text-danger"></span>
             </div>
         </div>
